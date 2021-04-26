@@ -1,0 +1,843 @@
+{
+    "type": "database",
+    "name": "LMNElectronics",
+    "objects": [
+        {
+            "type": "table",
+            "database": null,
+            "name": "AspNetRoleClaims",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE \"AspNetRoleClaims\" (\n    \"Id\" INTEGER NOT NULL CONSTRAINT \"PK_AspNetRoleClaims\" PRIMARY KEY AUTOINCREMENT,\n    \"RoleId\" TEXT NOT NULL,\n    \"ClaimType\" TEXT NULL,\n    \"ClaimValue\" TEXT NULL,\n    CONSTRAINT \"FK_AspNetRoleClaims_AspNetRoles_RoleId\" FOREIGN KEY (\"RoleId\") REFERENCES \"AspNetRoles\" (\"Id\") ON DELETE CASCADE\n)",
+            "columns": [
+                {
+                    "name": "Id",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL "
+                        },
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY AUTOINCREMENT"
+                        }
+                    ]
+                },
+                {
+                    "name": "RoleId",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "ClaimType",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": null,
+                            "definition": "NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "ClaimValue",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": null,
+                            "definition": "NULL"
+                        }
+                    ]
+                }
+            ],
+            "constraints": [
+                {
+                    "type": "FOREIGN KEY",
+                    "definition": "FOREIGN KEY (\"RoleId\") REFERENCES \"AspNetRoles\" (\"Id\") ON DELETE CASCADE\n"
+                }
+            ],
+            "rows": [
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "AspNetRoles",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE \"AspNetRoles\" (\n    \"Id\" TEXT NOT NULL CONSTRAINT \"PK_AspNetRoles\" PRIMARY KEY,\n    \"Name\" TEXT NULL,\n    \"NormalizedName\" TEXT NULL,\n    \"ConcurrencyStamp\" TEXT NULL\n)",
+            "columns": [
+                {
+                    "name": "Id",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL "
+                        },
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY"
+                        }
+                    ]
+                },
+                {
+                    "name": "Name",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": null,
+                            "definition": "NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "NormalizedName",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": null,
+                            "definition": "NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "ConcurrencyStamp",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": null,
+                            "definition": "NULL\n"
+                        }
+                    ]
+                }
+            ],
+            "rows": [
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "AspNetUserClaims",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE \"AspNetUserClaims\" (\n    \"Id\" INTEGER NOT NULL CONSTRAINT \"PK_AspNetUserClaims\" PRIMARY KEY AUTOINCREMENT,\n    \"UserId\" TEXT NOT NULL,\n    \"ClaimType\" TEXT NULL,\n    \"ClaimValue\" TEXT NULL,\n    CONSTRAINT \"FK_AspNetUserClaims_AspNetUsers_UserId\" FOREIGN KEY (\"UserId\") REFERENCES \"AspNetUsers\" (\"Id\") ON DELETE CASCADE\n)",
+            "columns": [
+                {
+                    "name": "Id",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL "
+                        },
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY AUTOINCREMENT"
+                        }
+                    ]
+                },
+                {
+                    "name": "UserId",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "ClaimType",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": null,
+                            "definition": "NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "ClaimValue",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": null,
+                            "definition": "NULL"
+                        }
+                    ]
+                }
+            ],
+            "constraints": [
+                {
+                    "type": "FOREIGN KEY",
+                    "definition": "FOREIGN KEY (\"UserId\") REFERENCES \"AspNetUsers\" (\"Id\") ON DELETE CASCADE\n"
+                }
+            ],
+            "rows": [
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "AspNetUserLogins",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE \"AspNetUserLogins\" (\n    \"LoginProvider\" TEXT NOT NULL,\n    \"ProviderKey\" TEXT NOT NULL,\n    \"ProviderDisplayName\" TEXT NULL,\n    \"UserId\" TEXT NOT NULL,\n    CONSTRAINT \"PK_AspNetUserLogins\" PRIMARY KEY (\"LoginProvider\", \"ProviderKey\"),\n    CONSTRAINT \"FK_AspNetUserLogins_AspNetUsers_UserId\" FOREIGN KEY (\"UserId\") REFERENCES \"AspNetUsers\" (\"Id\") ON DELETE CASCADE\n)",
+            "columns": [
+                {
+                    "name": "LoginProvider",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "ProviderKey",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "ProviderDisplayName",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": null,
+                            "definition": "NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "UserId",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                }
+            ],
+            "constraints": [
+                {
+                    "type": "PRIMARY KEY",
+                    "definition": "PRIMARY KEY (\"LoginProvider\", \"ProviderKey\")"
+                },
+                {
+                    "type": "FOREIGN KEY",
+                    "definition": "FOREIGN KEY (\"UserId\") REFERENCES \"AspNetUsers\" (\"Id\") ON DELETE CASCADE\n"
+                }
+            ],
+            "rows": [
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "AspNetUserRoles",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE \"AspNetUserRoles\" (\n    \"UserId\" TEXT NOT NULL,\n    \"RoleId\" TEXT NOT NULL,\n    CONSTRAINT \"PK_AspNetUserRoles\" PRIMARY KEY (\"UserId\", \"RoleId\"),\n    CONSTRAINT \"FK_AspNetUserRoles_AspNetRoles_RoleId\" FOREIGN KEY (\"RoleId\") REFERENCES \"AspNetRoles\" (\"Id\") ON DELETE CASCADE,\n    CONSTRAINT \"FK_AspNetUserRoles_AspNetUsers_UserId\" FOREIGN KEY (\"UserId\") REFERENCES \"AspNetUsers\" (\"Id\") ON DELETE CASCADE\n)",
+            "columns": [
+                {
+                    "name": "UserId",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "RoleId",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                }
+            ],
+            "constraints": [
+                {
+                    "type": "PRIMARY KEY",
+                    "definition": "PRIMARY KEY (\"UserId\", \"RoleId\")"
+                },
+                {
+                    "type": "FOREIGN KEY",
+                    "definition": "FOREIGN KEY (\"RoleId\") REFERENCES \"AspNetRoles\" (\"Id\") ON DELETE CASCADE"
+                },
+                {
+                    "type": "FOREIGN KEY",
+                    "definition": "FOREIGN KEY (\"UserId\") REFERENCES \"AspNetUsers\" (\"Id\") ON DELETE CASCADE\n"
+                }
+            ],
+            "rows": [
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "AspNetUsers",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE \"AspNetUsers\" (\n    \"Id\" TEXT NOT NULL CONSTRAINT \"PK_AspNetUsers\" PRIMARY KEY,\n    \"UserName\" TEXT NULL,\n    \"NormalizedUserName\" TEXT NULL,\n    \"Email\" TEXT NULL,\n    \"NormalizedEmail\" TEXT NULL,\n    \"EmailConfirmed\" INTEGER NOT NULL,\n    \"PasswordHash\" TEXT NULL,\n    \"SecurityStamp\" TEXT NULL,\n    \"ConcurrencyStamp\" TEXT NULL,\n    \"PhoneNumber\" TEXT NULL,\n    \"PhoneNumberConfirmed\" INTEGER NOT NULL,\n    \"TwoFactorEnabled\" INTEGER NOT NULL,\n    \"LockoutEnd\" TEXT NULL,\n    \"LockoutEnabled\" INTEGER NOT NULL,\n    \"AccessFailedCount\" INTEGER NOT NULL\n)",
+            "columns": [
+                {
+                    "name": "Id",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL "
+                        },
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY"
+                        }
+                    ]
+                },
+                {
+                    "name": "UserName",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": null,
+                            "definition": "NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "NormalizedUserName",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": null,
+                            "definition": "NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "Email",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": null,
+                            "definition": "NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "NormalizedEmail",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": null,
+                            "definition": "NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "EmailConfirmed",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "PasswordHash",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": null,
+                            "definition": "NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "SecurityStamp",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": null,
+                            "definition": "NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "ConcurrencyStamp",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": null,
+                            "definition": "NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "PhoneNumber",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": null,
+                            "definition": "NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "PhoneNumberConfirmed",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "TwoFactorEnabled",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "LockoutEnd",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": null,
+                            "definition": "NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "LockoutEnabled",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "AccessFailedCount",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL\n"
+                        }
+                    ]
+                }
+            ],
+            "rows": [
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "AspNetUserTokens",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE \"AspNetUserTokens\" (\n    \"UserId\" TEXT NOT NULL,\n    \"LoginProvider\" TEXT NOT NULL,\n    \"Name\" TEXT NOT NULL,\n    \"Value\" TEXT NULL,\n    CONSTRAINT \"PK_AspNetUserTokens\" PRIMARY KEY (\"UserId\", \"LoginProvider\", \"Name\"),\n    CONSTRAINT \"FK_AspNetUserTokens_AspNetUsers_UserId\" FOREIGN KEY (\"UserId\") REFERENCES \"AspNetUsers\" (\"Id\") ON DELETE CASCADE\n)",
+            "columns": [
+                {
+                    "name": "UserId",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "LoginProvider",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "Name",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "Value",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": null,
+                            "definition": "NULL"
+                        }
+                    ]
+                }
+            ],
+            "constraints": [
+                {
+                    "type": "PRIMARY KEY",
+                    "definition": "PRIMARY KEY (\"UserId\", \"LoginProvider\", \"Name\")"
+                },
+                {
+                    "type": "FOREIGN KEY",
+                    "definition": "FOREIGN KEY (\"UserId\") REFERENCES \"AspNetUsers\" (\"Id\") ON DELETE CASCADE\n"
+                }
+            ],
+            "rows": [
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "ElectronicItemCategories",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE \"ElectronicItemCategories\" (\n    \"Id\" TEXT NOT NULL CONSTRAINT \"PK_ElectronicItemCategories\" PRIMARY KEY,\n    \"CreatedOn\" TEXT NOT NULL,\n    \"UpdatedOn\" TEXT NULL,\n    \"LastAccessed\" TEXT NOT NULL,\n    \"Name\" TEXT NULL,\n    \"Description\" TEXT NULL\n)",
+            "columns": [
+                {
+                    "name": "Id",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL "
+                        },
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY"
+                        }
+                    ]
+                },
+                {
+                    "name": "CreatedOn",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "UpdatedOn",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": null,
+                            "definition": "NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "LastAccessed",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "Name",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": null,
+                            "definition": "NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "Description",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": null,
+                            "definition": "NULL\n"
+                        }
+                    ]
+                }
+            ],
+            "rows": [
+                [
+                    "9C4F7B02-4FE6-44AD-A668-ABC5DAD06EEC",
+                    "2021-04-19 17:36:17.158084",
+                    null,
+                    "0001-01-01 00:00:00",
+                    "Heat Sinks",
+                    ""
+                ],
+                [
+                    "C1CACA3F-E8AB-4CAC-98A3-13C94A517376",
+                    "2021-04-22 14:44:12.746178",
+                    null,
+                    "0001-01-01 00:00:00",
+                    "Batteries",
+                    ""
+                ]
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "ElectronicItems",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE \"ElectronicItems\" (\n    \"Id\" TEXT NOT NULL CONSTRAINT \"PK_ElectronicItems\" PRIMARY KEY,\n    \"CreatedOn\" TEXT NOT NULL,\n    \"UpdatedOn\" TEXT NULL,\n    \"LastAccessed\" TEXT NOT NULL,\n    \"Name\" TEXT NULL,\n    \"ImageURL\" TEXT NULL,\n    \"Price\" REAL NOT NULL,\n    \"Quantity\" INTEGER NOT NULL,\n    \"Description\" TEXT NULL,\n    \"CategoryId\" TEXT NULL,\n    CONSTRAINT \"FK_ElectronicItems_ElectronicItemCategories_CategoryId\" FOREIGN KEY (\"CategoryId\") REFERENCES \"ElectronicItemCategories\" (\"Id\") ON DELETE RESTRICT\n)",
+            "columns": [
+                {
+                    "name": "Id",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL "
+                        },
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY"
+                        }
+                    ]
+                },
+                {
+                    "name": "CreatedOn",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "UpdatedOn",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": null,
+                            "definition": "NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "LastAccessed",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "Name",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": null,
+                            "definition": "NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "ImageURL",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": null,
+                            "definition": "NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "Price",
+                    "type": "REAL",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "Quantity",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "Description",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": null,
+                            "definition": "NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "CategoryId",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": null,
+                            "definition": "NULL"
+                        }
+                    ]
+                }
+            ],
+            "constraints": [
+                {
+                    "type": "FOREIGN KEY",
+                    "definition": "FOREIGN KEY (\"CategoryId\") REFERENCES \"ElectronicItemCategories\" (\"Id\") ON DELETE RESTRICT\n"
+                }
+            ],
+            "rows": [
+                [
+                    "A541D660-0AE2-4584-9776-D90806F08FAD",
+                    "2021-04-19 17:40:44.802533",
+                    null,
+                    "0001-01-01 00:00:00",
+                    "Stereo",
+                    "",
+                    100,
+                    20,
+                    null,
+                    "9C4F7B02-4FE6-44AD-A668-ABC5DAD06EEC"
+                ],
+                [
+                    "8BDE9CFE-265D-4C20-8CFA-F9FC811304CE",
+                    "2021-04-22 14:34:37.92068",
+                    null,
+                    "0001-01-01 00:00:00",
+                    "Stereo",
+                    "",
+                    100,
+                    20,
+                    null,
+                    "9C4F7B02-4FE6-44AD-A668-ABC5DAD06EEC"
+                ],
+                [
+                    "164541DC-45E7-448C-8307-AA40D3018705",
+                    "2021-04-22 14:44:50.854126",
+                    null,
+                    "0001-01-01 00:00:00",
+                    "Lumala",
+                    "",
+                    2000,
+                    40,
+                    null,
+                    "C1CACA3F-E8AB-4CAC-98A3-13C94A517376"
+                ],
+                [
+                    "A27F0FF7-9602-41D3-8FCF-ACBBD4E849C3",
+                    "2021-04-22 18:51:25.518783",
+                    null,
+                    "0001-01-01 00:00:00",
+                    "Luma",
+                    "",
+                    1500,
+                    40,
+                    null,
+                    "C1CACA3F-E8AB-4CAC-98A3-13C94A517376"
+                ],
+                [
+                    "D4BC0787-5423-4146-91E2-30A2642A97DD",
+                    "2021-04-22 18:51:57.87878",
+                    null,
+                    "0001-01-01 00:00:00",
+                    "Bemala",
+                    "",
+                    1500,
+                    40,
+                    null,
+                    "C1CACA3F-E8AB-4CAC-98A3-13C94A517376"
+                ]
+            ]
+        },
+        {
+            "type": "index",
+            "database": null,
+            "name": "EmailIndex",
+            "unique": false,
+            "ddl": "CREATE INDEX \"EmailIndex\" ON \"AspNetUsers\" (\"NormalizedEmail\")"
+        },
+        {
+            "type": "index",
+            "database": null,
+            "name": "IX_AspNetRoleClaims_RoleId",
+            "unique": false,
+            "ddl": "CREATE INDEX \"IX_AspNetRoleClaims_RoleId\" ON \"AspNetRoleClaims\" (\"RoleId\")"
+        },
+        {
+            "type": "index",
+            "database": null,
+            "name": "IX_AspNetUserClaims_UserId",
+            "unique": false,
+            "ddl": "CREATE INDEX \"IX_AspNetUserClaims_UserId\" ON \"AspNetUserClaims\" (\"UserId\")"
+        },
+        {
+            "type": "index",
+            "database": null,
+            "name": "IX_AspNetUserLogins_UserId",
+            "unique": false,
+            "ddl": "CREATE INDEX \"IX_AspNetUserLogins_UserId\" ON \"AspNetUserLogins\" (\"UserId\")"
+        },
+        {
+            "type": "index",
+            "database": null,
+            "name": "IX_AspNetUserRoles_RoleId",
+            "unique": false,
+            "ddl": "CREATE INDEX \"IX_AspNetUserRoles_RoleId\" ON \"AspNetUserRoles\" (\"RoleId\")"
+        },
+        {
+            "type": "index",
+            "database": null,
+            "name": "IX_ElectronicItems_CategoryId",
+            "unique": false,
+            "ddl": "CREATE INDEX \"IX_ElectronicItems_CategoryId\" ON \"ElectronicItems\" (\"CategoryId\")"
+        },
+        {
+            "type": "index",
+            "database": null,
+            "name": "RoleNameIndex",
+            "unique": true,
+            "ddl": "CREATE UNIQUE INDEX \"RoleNameIndex\" ON \"AspNetRoles\" (\"NormalizedName\")"
+        },
+        {
+            "type": "index",
+            "database": null,
+            "name": "UserNameIndex",
+            "unique": true,
+            "ddl": "CREATE UNIQUE INDEX \"UserNameIndex\" ON \"AspNetUsers\" (\"NormalizedUserName\")"
+        }
+    ]
+}

@@ -1,0 +1,40 @@
+﻿<Properties StartupConfiguration="{54FD3CC1-2E84-4727-9C3E-67248565AF83}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="LMNElectronics/Contexts/LMNElectronicsDBContext.cs">
+    <Files>
+      <File FileName="LMNElectronics/Models/Order.cs" Line="8" Column="40" />
+      <File FileName="LMNElectronics/Controllers/OrderController.cs" Line="44" Column="1" />
+      <File FileName="LMNElectronics/Controllers/ElectronicItemsController.cs" Line="24" Column="10" />
+      <File FileName="LMNElectronics/Contexts/LMNElectronicsDBContext.cs" Line="29" Column="53" />
+      <File FileName="LMNElectronics/Models/Order.cs" Line="10" Column="59" />
+      <File FileName="LMNElectronics/Models/ElectronicItem.cs" Line="16" Column="53" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="LMNElectronics" expanded="True">
+            <Node name="LMNElectronics" expanded="True">
+              <Node name="Authentication" expanded="True" />
+              <Node name="Contexts" expanded="True">
+                <Node name="LMNElectronicsDBContext.cs" selected="True" />
+              </Node>
+              <Node name="Controllers" expanded="True" />
+              <Node name="Migrations" expanded="True" />
+              <Node name="Models" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.LMNElectronics PreferredExecutionTarget="/Applications/Firefox.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/user/Development/VisualStudio/LMNElectronics/LMNElectronics/Controllers/AuthenticationController.cs" relfile="LMNElectronics/Controllers/AuthenticationController.cs" line="104" column="1" />
+      <Breakpoint file="/Users/user/Development/VisualStudio/LMNElectronics/LMNElectronics/Controllers/ElectronicItemsController.cs" relfile="LMNElectronics/Controllers/ElectronicItemsController.cs" line="92" column="1" />
+      <Breakpoint file="/Users/user/Development/VisualStudio/LMNElectronics/LMNElectronics/Controllers/OrderController.cs" relfile="LMNElectronics/Controllers/OrderController.cs" line="46" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
